@@ -1,6 +1,7 @@
 // Import everything needed to use the `useQuery` hook
 import { useQuery, gql } from '@apollo/client';
 
+// query
 const GET_LOCATIONS = gql`
   query GetLocations {
     locations {
@@ -12,6 +13,10 @@ const GET_LOCATIONS = gql`
   }
 `;
 
+// Whenever this component renders, the useQuery
+// hook automatically executes our query and returns
+// a result object containing loading, error,
+// and data properties
 function DisplayLocations() {
     const { loading, error, data } = useQuery(GET_LOCATIONS);
 
