@@ -5,13 +5,15 @@ import App from './App.jsx'
 import './index.css'
 import { ApolloClient, InMemoryCache, ApolloProvider, gql } from '@apollo/client';
 
+// initialize apollo client
 const client = new ApolloClient({
-    uri: 'https://flyby-router-demo.herokuapp.com/',
+    uri: 'https://flyby-router-demo.herokuapp.com/',    // url of graph server
     cache: new InMemoryCache(),
 });
 
 // const client = ...
 
+// query
 client
     .query({
         query: gql`
@@ -27,6 +29,7 @@ client
     })
     .then((result) => console.log(result));
 
+// connect client to react
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
